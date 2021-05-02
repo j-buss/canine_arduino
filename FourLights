@@ -1,0 +1,47 @@
+
+
+// First we'll set up constants for the pin numbers.
+// This will make it easier to follow the code below.
+
+const int button1Pin = 2;  // pushbutton 1 pin
+const int ledPin4 =  13;    // LED pin
+const int ledPin3=  12;    // LED pin
+const int ledPin2 =  11;    // LED pin
+const int ledPin1 =  10;    // LED pin
+
+
+void setup()
+{
+  // Set up the pushbutton pins to be an input:
+  pinMode(button1Pin, INPUT);
+  
+  // Set up the LED pin to be an output:
+  pinMode(ledPin4, OUTPUT);  
+  pinMode(ledPin3, OUTPUT); 
+  pinMode(ledPin2, OUTPUT); 
+  pinMode(ledPin1, OUTPUT);     
+}
+
+
+void loop()
+{
+  int button1State;  // variables to hold the pushbutton states
+
+  button1State = digitalRead(button1Pin);
+    
+  if (button1State == LOW)
+  {
+    digitalWrite(ledPin4, HIGH);  // turn the LED on
+    digitalWrite(ledPin3, HIGH);  // turn the LED on
+    digitalWrite(ledPin2, HIGH);  // turn the LED on
+    digitalWrite(ledPin1, HIGH);  // turn the LED on
+  }
+  else
+  {
+    digitalWrite(ledPin4, LOW);  // turn the LED off
+    digitalWrite(ledPin3, LOW);  // turn the LED off
+    digitalWrite(ledPin2, LOW);  // turn the LED off
+    digitalWrite(ledPin1, LOW);  // turn the LED off
+  }
+       
+}
